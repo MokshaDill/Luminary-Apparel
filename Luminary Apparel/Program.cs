@@ -16,7 +16,7 @@ namespace Luminary_Apparel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Attendance());
+            Application.Run(new Admin_Login());
         }
     }
 }

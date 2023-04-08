@@ -73,6 +73,12 @@
     <Compile Include="Add_Employee.Designer.cs">
       <DependentUpon>Add_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Login.Designer.cs">
+      <DependentUpon>Admin_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Attendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     <Compile Include="TextBox.cs" />
     <EmbeddedResource Include="Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Login.resx">
+      <DependentUpon>Admin_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.cs</DependentUpon>
@@ -159,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\texture.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrato.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

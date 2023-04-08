@@ -73,6 +73,16 @@ namespace Luminary_Apparel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administrato {
+            get {
+                object obj = ResourceManager.GetObject("administrato", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_purple {
             get {
                 object obj = ResourceManager.GetObject("close_purple", resourceCulture);
