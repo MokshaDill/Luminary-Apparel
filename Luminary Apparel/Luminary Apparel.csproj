@@ -73,6 +73,12 @@
     <Compile Include="Add_Employee.Designer.cs">
       <DependentUpon>Add_Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Attendance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <Compile Include="TextBox.cs" />
     <EmbeddedResource Include="Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Login.resx">
       <DependentUpon>Main_Login.cs</DependentUpon>
@@ -144,6 +153,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\W19FUnwdrN_XmLTmhgRH8-transformed__1_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texture.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

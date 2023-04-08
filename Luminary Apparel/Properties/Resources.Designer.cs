@@ -93,6 +93,16 @@ namespace Luminary_Apparel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_256x256 {
+            get {
+                object obj = ResourceManager.GetObject("icon-256x256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LUMINARY {
             get {
                 object obj = ResourceManager.GetObject("LUMINARY", resourceCulture);
@@ -126,6 +136,16 @@ namespace Luminary_Apparel.Properties {
         internal static System.Drawing.Bitmap redbutton {
             get {
                 object obj = ResourceManager.GetObject("redbutton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap texture {
+            get {
+                object obj = ResourceManager.GetObject("texture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
