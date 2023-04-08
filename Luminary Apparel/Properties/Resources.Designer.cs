@@ -129,5 +129,15 @@ namespace Luminary_Apparel.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap W19FUnwdrN_XmLTmhgRH8_transformed__1__removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("W19FUnwdrN_XmLTmhgRH8-transformed__1_-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
