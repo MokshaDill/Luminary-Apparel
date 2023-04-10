@@ -105,6 +105,18 @@
     <Compile Include="Attendance.Designer.cs">
       <DependentUpon>Attendance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Leave_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leave_Request.Designer.cs">
+      <DependentUpon>Leave_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loan_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loan_Request.Designer.cs">
+      <DependentUpon>Loan_Request.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Attendance.resx">
       <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leave_Request.resx">
+      <DependentUpon>Leave_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loan_Request.resx">
+      <DependentUpon>Loan_Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Login.resx">
       <DependentUpon>Main_Login.cs</DependentUpon>
