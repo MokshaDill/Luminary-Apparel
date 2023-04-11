@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 
 namespace Luminary_Apparel
 {
     public partial class Add_Employee : Form
     {
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-4BLCHTST\\SQLEXPRESS;Initial Catalog=Luminary_Apparel;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand();
+
+        string image= null;
+
         public Add_Employee()
         {
             InitializeComponent();
@@ -52,6 +59,45 @@ namespace Luminary_Apparel
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Image img = guna2PictureBox1.Image;
+            byte[] arr;
+            ImageConverter converter = new ImageConverter();
+            arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
+
+            con.Open();
+            cmd = new SqlCommand("INSERT INTO Employee(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1,Phone2, Position,Email,Photo, GID) VALUES('"+ guna2TextBox1.Text+"','"+ guna2TextBox2.Text+"','"+ guna2TextBox2.Text+"','"+ guna2TextBox5.Text+"','"+ guna2ComboBox1.Text+"','"+ guna2ComboBox2 + "','"+ guna2DateTimePicker1.Text+"','"+ guna2TextBox6.Text+"','"+ guna2TextBox7.Text+"','"+ guna2ComboBox3.Text+"' , '"+guna2TextBox8.Text+"', '"+ arr+"', '"+ guna2TextBox9.Text+"')", con);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Saved");
+            con.Close();
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            using(OpenFileDialog ofd=new OpenFileDialog())
+            {
+                if(ofd.ShowDialog() == DialogResult.OK)
+                {
+                    image = ofd.FileName;
+                    guna2PictureBox1.Image = Image.FromFile(ofd.FileName);
+                }
+            }
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            // Clear the image displayed in the Guna2PictureBox
+            guna2PictureBox1.Image = null;
+
 
         }
     }
