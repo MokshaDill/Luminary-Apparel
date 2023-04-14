@@ -202,6 +202,7 @@
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(28, 26);
             this.guna2Button2.TabIndex = 10;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // Attendance
             // 

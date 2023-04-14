@@ -225,6 +225,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(198, 45);
             this.guna2Button3.TabIndex = 3;
             this.guna2Button3.Text = "ATTENDANCE";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button2
             // 

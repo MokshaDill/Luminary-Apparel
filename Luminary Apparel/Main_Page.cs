@@ -50,5 +50,11 @@ namespace Luminary_Apparel
             Add_Employee employee= new Add_Employee();
             employee.ShowDialog();
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            Attendance atten = new Attendance();
+            atten.ShowDialog();
+        }
     }
 }
