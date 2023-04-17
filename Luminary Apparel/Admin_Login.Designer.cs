@@ -105,6 +105,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 3;
             this.guna2Button1.Text = "Login";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // button1
             // 
@@ -136,6 +137,7 @@
             this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.White;
+            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
             // Admin_Login
             // 
@@ -143,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1400, 700);
+            this.ClientSize = new System.Drawing.Size(376, 548);
             this.Controls.Add(this.guna2CheckBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.guna2Button1);

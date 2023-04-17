@@ -19,7 +19,8 @@ namespace Luminary_Apparel
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-        
+            Admin_Login adminlogin = new Admin_Login();    
+            adminlogin.ShowDialog();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
