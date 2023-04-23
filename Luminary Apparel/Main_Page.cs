@@ -69,5 +69,11 @@ namespace Luminary_Apparel
             About about= new About();
             about.ShowDialog();
         }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            Payroll pay = new Payroll();
+            pay.ShowDialog();
+        }
     }
 }
