@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Welcome to Luminary Apparel, the ultimate garment payroll system designed to simplify and streamline your business operations. Our software is specifically tailored for clothing companies and makes it easy to manage employee payroll, track time and attendance, generate reports, and much more.
+
+At Luminary Apparel, we understand the unique challenges that garment businesses face, which is why we've created a software solution that meets all your needs. Whether you're a small startup or a large corporation, our easy-to-use system will help you save time and money, while also ensuring compliance with all relevant laws and regulations.
+
+Our team of experts has worked tirelessly to create a software solution that is intuitive, reliable, and secure. We've incorporated the latest technologies and best practices to ensure that your data is always protected and your operations are always running smoothly.
+
+So if you're looking for a reliable garment payroll system that can help you take your business to the next level, look no further than Luminary Apparel. Get started today and see the difference our software can make!
+
+***
+</value>
+  </data>
 </root>

@@ -16,5 +16,17 @@ namespace Luminary_Apparel
         {
             InitializeComponent();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Leave_Request lr = new Leave_Request();
+            lr.ShowDialog();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Loan_Request loan_Request= new Loan_Request();
+            loan_Request.ShowDialog();
+        }
     }
 }

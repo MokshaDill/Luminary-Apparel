@@ -155,6 +155,7 @@
             this.guna2Button6.Size = new System.Drawing.Size(198, 45);
             this.guna2Button6.TabIndex = 6;
             this.guna2Button6.Text = "ABOUT";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button4
             // 
@@ -178,6 +179,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(198, 45);
             this.guna2Button4.TabIndex = 5;
             this.guna2Button4.Text = "REQUEST";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button5
             // 

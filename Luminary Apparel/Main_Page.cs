@@ -57,5 +57,17 @@ namespace Luminary_Apparel
             Attendance atten = new Attendance();
             atten.ShowDialog();
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            Request req = new Request();
+            req.ShowDialog();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            About about= new About();
+            about.ShowDialog();
+        }
     }
 }

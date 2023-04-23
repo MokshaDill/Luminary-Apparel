@@ -163,6 +163,16 @@ namespace Luminary_Apparel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap roce {
+            get {
+                object obj = ResourceManager.GetObject("roce", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap texture {
             get {
                 object obj = ResourceManager.GetObject("texture", resourceCulture);
