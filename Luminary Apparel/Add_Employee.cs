@@ -55,11 +55,43 @@ namespace Luminary_Apparel
         private void guna2Button4_Click(object sender, EventArgs e)
         {
 
+            con.Open();
+            //SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1,Phone2, Position,Email,Photo, GID) VALUES('" + guna2TextBox1.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox5.Text + "','" + guna2ComboBox1.Text + "','" + guna2ComboBox2 + "','" + this.guna2DateTimePicker1.Value.ToString("MM/dd/yyyy hh/mm/ss") + "','" + guna2TextBox6.Text + "','" + guna2TextBox7.Text + "','" + guna2ComboBox3.Text + "' , '" + guna2TextBox8.Text + "', '" + arr + "', '" + guna2TextBox9.Text + "')", con);
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO JobDetailsForm(JobName,Experience, DateConform, PayFrequency, PaymentMethod, Qualification, GID) VALUES(@Jname, @ex, @date, @pay, @payment, @quli,  @GID)", con);
+
+            cmd.Parameters.AddWithValue("@Jname", guna2ComboBox7.Text);
+            cmd.Parameters.AddWithValue("@ex", guna2ComboBox4.Text);
+            cmd.Parameters.AddWithValue("@pay", guna2ComboBox5.Text);
+            cmd.Parameters.AddWithValue("@payment", guna2ComboBox6.Text);
+            cmd.Parameters.AddWithValue("@quli", guna2TextBox10.Text);
+            cmd.Parameters.AddWithValue("@date", this.guna2DateTimePicker2.Value);
+            cmd.Parameters.AddWithValue("@GID", guna2TextBox4.Text);
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Saved");
+            con.Close();
+
+
+
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
+            con.Open();
+            //SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1,Phone2, Position,Email,Photo, GID) VALUES('" + guna2TextBox1.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox5.Text + "','" + guna2ComboBox1.Text + "','" + guna2ComboBox2 + "','" + this.guna2DateTimePicker1.Value.ToString("MM/dd/yyyy hh/mm/ss") + "','" + guna2TextBox6.Text + "','" + guna2TextBox7.Text + "','" + guna2ComboBox3.Text + "' , '" + guna2TextBox8.Text + "', '" + arr + "', '" + guna2TextBox9.Text + "')", con);
 
+            SqlCommand cmd = new SqlCommand("INSERT INTO BankDetailsForm(GID, FullName, BankNo, Branch, BankName) VALUES(@GID, @FullName, @BankNo, @Branch, @BankName)", con);
+
+            cmd.Parameters.AddWithValue("@GID", guna2TextBox11.Text);
+            cmd.Parameters.AddWithValue("@FullName", guna2TextBox12.Text);
+            cmd.Parameters.AddWithValue("@BankNo", guna2TextBox13.Text);
+            cmd.Parameters.AddWithValue("@Branch", guna2ComboBox9.Text);
+            cmd.Parameters.AddWithValue("@BankName", guna2ComboBox8.Text);
+
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Saved");
+            con.Close();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
