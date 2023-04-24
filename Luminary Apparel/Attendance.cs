@@ -13,7 +13,8 @@ namespace Luminary_Apparel
 {
     public partial class Attendance : Form
     {
-        
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-4BLCHTST\\SQLEXPRESS;Initial Catalog=Luminary_Apparel;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand();
         public Attendance()
         {
             InitializeComponent();
@@ -32,6 +33,30 @@ namespace Luminary_Apparel
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to perform this action?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)    //check conformation box
+            {
+                con.Open();
+
+                cmd = new SqlCommand("INSERT INTO AttendanceForm(GID, Status, STime, ETime) VALUES(@gid, @status, @stime, @etime)", con);
+                cmd.Parameters.AddWithValue("@gid", guna2TextBox1.Text);
+                cmd.Parameters.AddWithValue("@status", guna2ComboBox1.Text);
+                cmd.Parameters.AddWithValue("@stime", this.guna2DateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@etime", this.guna2DateTimePicker2.Value);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Saved");
+                con.Close();
+            }
+            else
+            {
+
+            }
         }
     }
 }
