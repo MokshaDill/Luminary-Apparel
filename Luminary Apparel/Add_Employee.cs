@@ -75,7 +75,24 @@ namespace Luminary_Apparel
             arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
 
             con.Open();
-            cmd = new SqlCommand("INSERT INTO Employee(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1,Phone2, Position,Email,Photo, GID) VALUES('"+ guna2TextBox1.Text+"','"+ guna2TextBox2.Text+"','"+ guna2TextBox2.Text+"','"+ guna2TextBox5.Text+"','"+ guna2ComboBox1.Text+"','"+ guna2ComboBox2 + "','"+ guna2DateTimePicker1.Text+"','"+ guna2TextBox6.Text+"','"+ guna2TextBox7.Text+"','"+ guna2ComboBox3.Text+"' , '"+guna2TextBox8.Text+"', '"+ arr+"', '"+ guna2TextBox9.Text+"')", con);
+            //SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1,Phone2, Position,Email,Photo, GID) VALUES('" + guna2TextBox1.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox5.Text + "','" + guna2ComboBox1.Text + "','" + guna2ComboBox2 + "','" + this.guna2DateTimePicker1.Value.ToString("MM/dd/yyyy hh/mm/ss") + "','" + guna2TextBox6.Text + "','" + guna2TextBox7.Text + "','" + guna2ComboBox3.Text + "' , '" + guna2TextBox8.Text + "', '" + arr + "', '" + guna2TextBox9.Text + "')", con);
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1, Phone2, Position, Email, Photo, GID) VALUES(@NIC, @Fname, @Lname, @Address, @Gender, @Status, @Bday, @Phone1, @Phone2, @Position, @Email, @Photo, @GID)", con);
+
+            cmd.Parameters.AddWithValue("@NIC", guna2TextBox1.Text);
+            cmd.Parameters.AddWithValue("@Fname", guna2TextBox2.Text);
+            cmd.Parameters.AddWithValue("@Lname", guna2TextBox3.Text);
+            cmd.Parameters.AddWithValue("@Address", guna2TextBox5.Text);
+            cmd.Parameters.AddWithValue("@Gender", guna2ComboBox1.Text);
+            cmd.Parameters.AddWithValue("@Status", guna2ComboBox2.Text);
+            cmd.Parameters.AddWithValue("@Bday", this.guna2DateTimePicker1.Value);
+            cmd.Parameters.AddWithValue("@Phone1", guna2TextBox6.Text);
+            cmd.Parameters.AddWithValue("@Phone2", guna2TextBox7.Text);
+            cmd.Parameters.AddWithValue("@Position", guna2ComboBox3.Text);
+            cmd.Parameters.AddWithValue("@Email", guna2TextBox8.Text);
+            cmd.Parameters.AddWithValue("@Photo", arr);
+            cmd.Parameters.AddWithValue("@GID", guna2TextBox9.Text);
+
             cmd.ExecuteNonQuery();
             MessageBox.Show("Saved");
             con.Close();
