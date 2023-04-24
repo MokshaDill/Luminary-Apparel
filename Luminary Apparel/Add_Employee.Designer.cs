@@ -88,11 +88,11 @@
             this.label22 = new System.Windows.Forms.Label();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ComboBox8 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -264,6 +264,7 @@
             this.guna2PictureBox1.Location = new System.Drawing.Point(778, 285);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(292, 269);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 25;
             this.guna2PictureBox1.TabStop = false;
             // 
@@ -735,6 +736,16 @@
             this.guna2ComboBox7.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox7.ItemHeight = 30;
+            this.guna2ComboBox7.Items.AddRange(new object[] {
+            "Machine Operator",
+            "Production Supervisor",
+            "Machine Technician",
+            "Supervisor",
+            "Assistant Production Officer",
+            "Production Officer",
+            "Quality Control Inspector",
+            "Industrial Engineer",
+            "Cleaner"});
             this.guna2ComboBox7.Location = new System.Drawing.Point(542, 125);
             this.guna2ComboBox7.Name = "guna2ComboBox7";
             this.guna2ComboBox7.Size = new System.Drawing.Size(229, 36);
@@ -759,6 +770,10 @@
             this.guna2ComboBox6.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox6.ItemHeight = 30;
+            this.guna2ComboBox6.Items.AddRange(new object[] {
+            "Hand Delivery",
+            "Online Payment",
+            "Bank Deposit"});
             this.guna2ComboBox6.Location = new System.Drawing.Point(542, 281);
             this.guna2ComboBox6.Name = "guna2ComboBox6";
             this.guna2ComboBox6.Size = new System.Drawing.Size(229, 36);
@@ -792,6 +807,11 @@
             this.guna2ComboBox5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox5.ItemHeight = 30;
+            this.guna2ComboBox5.Items.AddRange(new object[] {
+            "Monthly ",
+            "Weekly ",
+            "Annualy",
+            "Daily"});
             this.guna2ComboBox5.Location = new System.Drawing.Point(166, 427);
             this.guna2ComboBox5.Name = "guna2ComboBox5";
             this.guna2ComboBox5.Size = new System.Drawing.Size(229, 36);
@@ -831,6 +851,12 @@
             this.guna2ComboBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox4.ItemHeight = 30;
+            this.guna2ComboBox4.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
             this.guna2ComboBox4.Location = new System.Drawing.Point(166, 281);
             this.guna2ComboBox4.Name = "guna2ComboBox4";
             this.guna2ComboBox4.Size = new System.Drawing.Size(229, 36);
@@ -969,6 +995,21 @@
             this.guna2ComboBox9.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox9.ItemHeight = 30;
+            this.guna2ComboBox9.Items.AddRange(new object[] {
+            "Bank of Ceylon",
+            "People\'s Bank",
+            "Commercial Bank of Ceylon",
+            "Hatton National Bank",
+            "Sampath Bank",
+            "Nations Trust Bank",
+            "Seylan Bank",
+            "DFCC Bank",
+            "National Development Bank",
+            "Union Bank",
+            "Pan Asia Banking Corporation",
+            "Standard Chartered Bank",
+            "HSBC",
+            "Citi Bank"});
             this.guna2ComboBox9.Location = new System.Drawing.Point(904, 336);
             this.guna2ComboBox9.Name = "guna2ComboBox9";
             this.guna2ComboBox9.Size = new System.Drawing.Size(229, 36);
@@ -1017,30 +1058,26 @@
             this.guna2ComboBox8.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox8.ItemHeight = 30;
+            this.guna2ComboBox8.Items.AddRange(new object[] {
+            "BOC Head Office Branch - Colombo",
+            "Kandy City Centre Branch - Kandy",
+            "Wellawatta Branch - Colombo",
+            "Bambalapitiya Branch - Colombo",
+            "Negombo Branch - Negombo",
+            "Galle Branch - Galle",
+            "Moratuwa Branch - Moratuwa",
+            "Nugegoda Branch - Nugegoda",
+            "Wattala Branch - Wattala",
+            "Maharagama Branch - Maharagama",
+            "Matara Branch - Matara",
+            "Batticaloa Branch - Batticaloa",
+            "Trincomalee Branch - Trincomalee",
+            "Jaffna Branch - Jaffna",
+            "Anuradhapura Branch - Anuradhapura"});
             this.guna2ComboBox8.Location = new System.Drawing.Point(904, 401);
             this.guna2ComboBox8.Name = "guna2ComboBox8";
             this.guna2ComboBox8.Size = new System.Drawing.Size(229, 36);
             this.guna2ComboBox8.TabIndex = 3;
-            // 
-            // guna2TextBox11
-            // 
-            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox11.DefaultText = "";
-            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Location = new System.Drawing.Point(904, 137);
-            this.guna2TextBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox11.Name = "guna2TextBox11";
-            this.guna2TextBox11.PasswordChar = '\0';
-            this.guna2TextBox11.PlaceholderText = "";
-            this.guna2TextBox11.SelectedText = "";
-            this.guna2TextBox11.Size = new System.Drawing.Size(229, 36);
-            this.guna2TextBox11.TabIndex = 2;
             // 
             // guna2PictureBox2
             // 
@@ -1095,6 +1132,26 @@
             this.guna2Button2.Size = new System.Drawing.Size(28, 26);
             this.guna2Button2.TabIndex = 28;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2TextBox11
+            // 
+            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox11.DefaultText = "";
+            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Location = new System.Drawing.Point(904, 137);
+            this.guna2TextBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox11.Name = "guna2TextBox11";
+            this.guna2TextBox11.PasswordChar = '\0';
+            this.guna2TextBox11.PlaceholderText = "";
+            this.guna2TextBox11.SelectedText = "";
+            this.guna2TextBox11.Size = new System.Drawing.Size(229, 36);
+            this.guna2TextBox11.TabIndex = 2;
             // 
             // Add_Employee
             // 
@@ -1182,10 +1239,10 @@
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label label21;
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
     }
 }
