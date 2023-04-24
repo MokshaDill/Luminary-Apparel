@@ -38,8 +38,9 @@ namespace Luminary_Apparel
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you want to perform this action?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)    //check conformation box
+            
+            //check conformation box
+            if (result == DialogResult.Yes)    
             {
                 con.Open();
 
