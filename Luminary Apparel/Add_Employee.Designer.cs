@@ -93,7 +93,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
+<<<<<<< HEAD
             this.label26 = new System.Windows.Forms.Label();
+=======
+>>>>>>> ee7ff70e4d4f86001d124bd43f714b79eae0f25f
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -1155,6 +1158,7 @@
             this.guna2TextBox11.Size = new System.Drawing.Size(229, 36);
             this.guna2TextBox11.TabIndex = 2;
             // 
+<<<<<<< HEAD
             // label26
             // 
             this.label26.AutoSize = true;
@@ -1165,6 +1169,8 @@
             this.label26.TabIndex = 16;
             this.label26.Text = "Max - Level 5   Min - Level 1";
             // 
+=======
+>>>>>>> ee7ff70e4d4f86001d124bd43f714b79eae0f25f
             // Add_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1256,6 +1262,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label26;
+=======
+>>>>>>> ee7ff70e4d4f86001d124bd43f714b79eae0f25f
     }
 }
