@@ -28,5 +28,10 @@ namespace Luminary_Apparel
             Loan_Request loan_Request= new Loan_Request();
             loan_Request.ShowDialog();
         }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
