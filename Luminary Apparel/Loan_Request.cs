@@ -83,5 +83,15 @@ namespace Luminary_Apparel
             MessageBox.Show("Saved");
 
         }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();   
+        //}
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
