@@ -57,19 +57,25 @@ namespace Luminary_Apparel
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Loan(LoanNo, GID, HRApproval, LoanStatus, Description) VALUES(@LoanNo, @GID, @HRApproval, @LoanStatus, @Description)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO Leave(GID, Reason, LeaveType, Date, NOofDay) VALUES(@GID, @Reason, @LeaveType, @Date, @NOofDay)", con);
 
-            cmd.Parameters.AddWithValue("@LoanNo", guna2ComboBox9.Text);
-            cmd.Parameters.AddWithValue("@GID", guna2TextBox12.Text);
-            cmd.Parameters.AddWithValue("@HRApproval", guna2ComboBox6.Text);
-            cmd.Parameters.AddWithValue("@LoanStatus", guna2ComboBox7.Text);
-            cmd.Parameters.AddWithValue("@Description", guna2TextBox13.Text);
+            cmd.Parameters.AddWithValue("@GID", guna2TextBox1.Text);
+            cmd.Parameters.AddWithValue("@Reason", guna2ComboBox1.Text);
+            cmd.Parameters.AddWithValue("@LeaveType", guna2ComboBox2.Text);
+            cmd.Parameters.AddWithValue("@Date", guna2DateTimePicker1.Value);
+            cmd.Parameters.AddWithValue("@NOofDay", guna2ComboBox3.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Saved");
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();   
         }
     }
 }

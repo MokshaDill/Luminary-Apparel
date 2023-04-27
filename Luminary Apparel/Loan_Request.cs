@@ -62,13 +62,21 @@ namespace Luminary_Apparel
 
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Loan(LoanNo, GID, HRApproval, LoanStatus, Description) VALUES(@LoanNo, @GID, @HRApproval, @LoanStatus, @Description)", con);
+            SqlCommand cmd = new SqlCommand("INSERT INTO LoanRequest(GID, NIC, Fname, Lname, LoanAmount, Reason, ContactNumber, Monthlyfee, GuarantName1, GuarantGID1, GuarantName2, GuarantGID2) VALUES(@GID, @NIC, @Fname, @Lname, @LoanAmount, @Reason, @ContactNumber, @Monthlyfee, @GuarantName1, @GuarantGID1, @GuarantName2, @GuarantGID2)", con);
 
-            cmd.Parameters.AddWithValue("@LoanNo", guna2ComboBox9.Text);
-            cmd.Parameters.AddWithValue("@GID", guna2TextBox12.Text);
-            cmd.Parameters.AddWithValue("@HRApproval", guna2ComboBox6.Text);
-            cmd.Parameters.AddWithValue("@LoanStatus", guna2ComboBox7.Text);
-            cmd.Parameters.AddWithValue("@Description", guna2TextBox13.Text);
+            cmd.Parameters.AddWithValue("@GID", guna2TextBox1.Text);
+            cmd.Parameters.AddWithValue("@NIC", guna2TextBox2.Text);
+            cmd.Parameters.AddWithValue("@Fname", guna2TextBox3.Text);
+            cmd.Parameters.AddWithValue("@Lname", guna2TextBox4.Text);
+            //cmd.Parameters.AddWithValue("@jobID", guna2TextBox5.Text);
+            cmd.Parameters.AddWithValue("@LoanAmount", guna2TextBox5.Text);
+            cmd.Parameters.AddWithValue("@Reason", guna2ComboBox1.Text);
+            cmd.Parameters.AddWithValue("@ContactNumber", guna2TextBox6.Text);
+            cmd.Parameters.AddWithValue("@Monthlyfee", guna2TextBox9.Text);
+            cmd.Parameters.AddWithValue("@GuarantName1", guna2TextBox8.Text);
+            cmd.Parameters.AddWithValue("@GuarantGID1", guna2TextBox10.Text);
+            cmd.Parameters.AddWithValue("@GuarantName2", guna2TextBox11.Text);
+            cmd.Parameters.AddWithValue("@GuarantGID2", guna2TextBox7.Text);
 
             cmd.ExecuteNonQuery();
             con.Close();
