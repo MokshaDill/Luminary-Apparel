@@ -61,6 +61,7 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label26 = new System.Windows.Forms.Label();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -88,15 +89,11 @@
             this.label22 = new System.Windows.Forms.Label();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ComboBox8 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox11 = new Guna.UI2.WinForms.Guna2TextBox();
-<<<<<<< HEAD
-            this.label26 = new System.Windows.Forms.Label();
-=======
->>>>>>> ee7ff70e4d4f86001d124bd43f714b79eae0f25f
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -663,6 +660,16 @@
             this.tabPage2.Text = "Job Details";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Gainsboro;
+            this.label26.Location = new System.Drawing.Point(163, 333);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(168, 16);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "Max - Level 5   Min - Level 1";
+            // 
             // guna2Button5
             // 
             this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -716,18 +723,20 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(888, 105);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(887, 92);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(80, 16);
+            this.label20.Size = new System.Drawing.Size(102, 20);
             this.label20.TabIndex = 12;
             this.label20.Text = "Qualification";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(539, 106);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(538, 93);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 16);
+            this.label19.Size = new System.Drawing.Size(85, 20);
             this.label19.TabIndex = 11;
             this.label19.Text = "Job Name";
             // 
@@ -759,9 +768,10 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(539, 262);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(538, 249);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(108, 16);
+            this.label18.Size = new System.Drawing.Size(134, 20);
             this.label18.TabIndex = 9;
             this.label18.Text = "Payment method";
             // 
@@ -787,18 +797,20 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(539, 408);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(538, 395);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(89, 16);
+            this.label17.Size = new System.Drawing.Size(114, 20);
             this.label17.TabIndex = 7;
             this.label17.Text = "Date Conform";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(163, 408);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(162, 395);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(98, 16);
+            this.label16.Size = new System.Drawing.Size(120, 20);
             this.label16.TabIndex = 6;
             this.label16.Text = "Pay Frequency";
             // 
@@ -826,9 +838,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(163, 262);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(162, 249);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(75, 16);
+            this.label15.Size = new System.Drawing.Size(92, 20);
             this.label15.TabIndex = 4;
             this.label15.Text = "Experience";
             // 
@@ -890,9 +903,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(163, 105);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(162, 92);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(30, 16);
+            this.label14.Size = new System.Drawing.Size(39, 20);
             this.label14.TabIndex = 0;
             this.label14.Text = "GID";
             // 
@@ -955,9 +969,10 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(793, 270);
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(773, 270);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(89, 16);
+            this.label25.Size = new System.Drawing.Size(119, 22);
             this.label25.TabIndex = 10;
             this.label25.Text = "Bank Number";
             // 
@@ -984,9 +999,10 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(793, 203);
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(773, 203);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(68, 16);
+            this.label24.Size = new System.Drawing.Size(91, 22);
             this.label24.TabIndex = 8;
             this.label24.Text = "Full Name";
             // 
@@ -1023,18 +1039,20 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(793, 336);
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(773, 336);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 16);
+            this.label23.Size = new System.Drawing.Size(103, 22);
             this.label23.TabIndex = 6;
             this.label23.Text = "Bank Name";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(793, 401);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(773, 401);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 16);
+            this.label22.Size = new System.Drawing.Size(67, 22);
             this.label22.TabIndex = 5;
             this.label22.Text = "Branch";
             // 
@@ -1084,6 +1102,26 @@
             this.guna2ComboBox8.Size = new System.Drawing.Size(229, 36);
             this.guna2ComboBox8.TabIndex = 3;
             // 
+            // guna2TextBox11
+            // 
+            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox11.DefaultText = "";
+            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox11.Location = new System.Drawing.Point(904, 137);
+            this.guna2TextBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox11.Name = "guna2TextBox11";
+            this.guna2TextBox11.PasswordChar = '\0';
+            this.guna2TextBox11.PlaceholderText = "";
+            this.guna2TextBox11.SelectedText = "";
+            this.guna2TextBox11.Size = new System.Drawing.Size(229, 36);
+            this.guna2TextBox11.TabIndex = 2;
+            // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.BackgroundImage = global::Luminary_Apparel.Properties.Resources.W19FUnwdrN_XmLTmhgRH8_transformed__1__removebg_preview;
@@ -1099,9 +1137,10 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(793, 137);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(773, 137);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(30, 16);
+            this.label21.Size = new System.Drawing.Size(41, 22);
             this.label21.TabIndex = 0;
             this.label21.Text = "GID";
             // 
@@ -1138,39 +1177,6 @@
             this.guna2Button2.TabIndex = 28;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
-            // guna2TextBox11
-            // 
-            this.guna2TextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox11.DefaultText = "";
-            this.guna2TextBox11.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox11.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox11.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox11.Location = new System.Drawing.Point(904, 137);
-            this.guna2TextBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox11.Name = "guna2TextBox11";
-            this.guna2TextBox11.PasswordChar = '\0';
-            this.guna2TextBox11.PlaceholderText = "";
-            this.guna2TextBox11.SelectedText = "";
-            this.guna2TextBox11.Size = new System.Drawing.Size(229, 36);
-            this.guna2TextBox11.TabIndex = 2;
-            // 
-<<<<<<< HEAD
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Gainsboro;
-            this.label26.Location = new System.Drawing.Point(163, 333);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(168, 16);
-            this.label26.TabIndex = 16;
-            this.label26.Text = "Max - Level 5   Min - Level 1";
-            // 
-=======
->>>>>>> ee7ff70e4d4f86001d124bd43f714b79eae0f25f
             // Add_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1262,9 +1268,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
-<<<<<<< HEAD
         private System.Windows.Forms.Label label26;
-=======
->>>>>>> ee7ff70e4d4f86001d124bd43f714b79eae0f25f
     }
 }
