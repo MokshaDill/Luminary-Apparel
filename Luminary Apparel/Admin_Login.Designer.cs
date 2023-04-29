@@ -69,12 +69,13 @@
             this.guna2TextBox1.Location = new System.Drawing.Point(72, 390);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PasswordChar = '●';
             this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.guna2TextBox1.PlaceholderText = "Enter admin password";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(229, 48);
             this.guna2TextBox1.TabIndex = 1;
+            this.guna2TextBox1.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -119,6 +120,7 @@
             this.button1.Size = new System.Drawing.Size(23, 23);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // guna2CheckBox1
             // 

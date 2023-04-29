@@ -106,28 +106,34 @@ namespace Luminary_Apparel
             ImageConverter converter = new ImageConverter();
             arr = (byte[])converter.ConvertTo(img, typeof(byte[]));
 
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1,Phone2, Position,Email,Photo, GID) VALUES('" + guna2TextBox1.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox2.Text + "','" + guna2TextBox5.Text + "','" + guna2ComboBox1.Text + "','" + guna2ComboBox2 + "','" + this.guna2DateTimePicker1.Value.ToString("MM/dd/yyyy hh/mm/ss") + "','" + guna2TextBox6.Text + "','" + guna2TextBox7.Text + "','" + guna2ComboBox3.Text + "' , '" + guna2TextBox8.Text + "', '" + arr + "', '" + guna2TextBox9.Text + "')", con);
+            if (guna2TextBox1.Text == "" || guna2TextBox2.Text == "" || guna2TextBox3.Text == "" || guna2TextBox5.Text == "" || guna2ComboBox1.Text == "" || guna2ComboBox2.Text == "" || guna2ComboBox3.Text == "" || guna2TextBox6.Text == "" || guna2TextBox7.Text == "" || guna2TextBox8.Text == "" || guna2TextBox9.Text == "")
+            {
+                MessageBox.Show("Please fill all the required fields.");
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1, Phone2, Position, Email, Photo, GID) VALUES(@NIC, @Fname, @Lname, @Address, @Gender, @Status, @Bday, @Phone1, @Phone2, @Position, @Email, @Photo, @GID)", con);
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO EmployeeForm(NIC,Fname, Lname, Address, Gender, Status, Bday, Phone1, Phone2, Position, Email, Photo, GID) VALUES(@NIC, @Fname, @Lname, @Address, @Gender, @Status, @Bday, @Phone1, @Phone2, @Position, @Email, @Photo, @GID)", con);
+                cmd.Parameters.AddWithValue("@NIC", guna2TextBox1.Text);
+                cmd.Parameters.AddWithValue("@Fname", guna2TextBox2.Text);
+                cmd.Parameters.AddWithValue("@Lname", guna2TextBox3.Text);
+                cmd.Parameters.AddWithValue("@Address", guna2TextBox5.Text);
+                cmd.Parameters.AddWithValue("@Gender", guna2ComboBox1.Text);
+                cmd.Parameters.AddWithValue("@Status", guna2ComboBox2.Text);
+                cmd.Parameters.AddWithValue("@Bday", this.guna2DateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@Phone1", guna2TextBox6.Text);
+                cmd.Parameters.AddWithValue("@Phone2", guna2TextBox7.Text);
+                cmd.Parameters.AddWithValue("@Position", guna2ComboBox3.Text);
+                cmd.Parameters.AddWithValue("@Email", guna2TextBox8.Text);
+                cmd.Parameters.AddWithValue("@Photo", arr);
+                cmd.Parameters.AddWithValue("@GID", guna2TextBox9.Text);
 
-            cmd.Parameters.AddWithValue("@NIC", guna2TextBox1.Text);
-            cmd.Parameters.AddWithValue("@Fname", guna2TextBox2.Text);
-            cmd.Parameters.AddWithValue("@Lname", guna2TextBox3.Text);
-            cmd.Parameters.AddWithValue("@Address", guna2TextBox5.Text);
-            cmd.Parameters.AddWithValue("@Gender", guna2ComboBox1.Text);
-            cmd.Parameters.AddWithValue("@Status", guna2ComboBox2.Text);
-            cmd.Parameters.AddWithValue("@Bday", this.guna2DateTimePicker1.Value);
-            cmd.Parameters.AddWithValue("@Phone1", guna2TextBox6.Text);
-            cmd.Parameters.AddWithValue("@Phone2", guna2TextBox7.Text);
-            cmd.Parameters.AddWithValue("@Position", guna2ComboBox3.Text);
-            cmd.Parameters.AddWithValue("@Email", guna2TextBox8.Text);
-            cmd.Parameters.AddWithValue("@Photo", arr);
-            cmd.Parameters.AddWithValue("@GID", guna2TextBox9.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Saved");
+                con.Close();
+            }
 
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Saved");
-            con.Close();
         }
 
         private void guna2Button8_Click(object sender, EventArgs e)

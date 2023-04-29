@@ -227,6 +227,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(177, 50);
             this.guna2Button3.TabIndex = 28;
             this.guna2Button3.Text = "Clear";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button1
             // 
