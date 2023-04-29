@@ -32,7 +32,15 @@ namespace Luminary_Apparel
         private int count;
         private double overtimeHours;
         private string BasicSalary;
-        string name;
+        private string name;
+        private double bounus;
+        private double otprice;
+        private string EPF;
+        private string ETF;
+        private double ldeduction;
+        private double netsalary;
+        private double netETF;
+        private double netEPF;
 
         public Payroll_details(int gID1)
         {
@@ -63,8 +71,8 @@ namespace Luminary_Apparel
             string maxloan = "";
             double loanpermonth=0;
             string otperhour = "";
-            string EPF = "";
-            string ETF = "";
+            
+            
 
 
 
@@ -226,19 +234,26 @@ namespace Luminary_Apparel
             name = fname+" "+lname;
 
             double othour = Convert.ToDouble(otperhour);
-            double otprice = overtimeHours* othour;
+            otprice = overtimeHours* othour;
 
-            double netEPF = (Convert.ToDouble(BasicSalary) * Convert.ToDouble(EPF))/100;
-            double netETF = (Convert.ToDouble(BasicSalary) * Convert.ToDouble(ETF)) / 100;
+            netEPF = (Convert.ToDouble(BasicSalary) * Convert.ToDouble(EPF))/100;
+            netETF = (Convert.ToDouble(BasicSalary) * Convert.ToDouble(ETF)) / 100;
 
             //loan deduction
-            double ldeduction = (Convert.ToDouble(BasicSalary) - Convert.ToDouble(loanpermonth));
+            ldeduction =  Math.Round(Convert.ToDouble(loanpermonth),2);
 
             //total deduction
-            double totaldeduction = ( Convert.ToDouble(loanpermonth) + netEPF + netETF);
+            double totaldeduction = ( loanpermonth + netEPF + netETF);
 
             //net salary
-            double netsalary = (Convert.ToDouble(BasicSalary) - Convert.ToDouble(loanpermonth) - netEPF - netETF);
+            netsalary = Math.Round(Convert.ToDouble(BasicSalary) - Convert.ToDouble(loanpermonth) - netEPF - netETF + bounus,2);
+
+
+            //bounus
+            if (count >= 20)
+            {
+                bounus = 500*(count-20);
+            }
 
 
 
@@ -248,12 +263,12 @@ namespace Luminary_Apparel
             guna2TextBox14.Text = count.ToString();
             guna2TextBox15.Text = overtimeHours.ToString();
             guna2TextBox5.Text = BasicSalary.ToString();
-            guna2TextBox12.Text = loanpermonth.ToString();
+            guna2TextBox12.Text = bounus.ToString();
             guna2TextBox6.Text = otprice.ToString();
             guna2TextBox8.Text = netEPF.ToString();
             guna2TextBox9.Text = netETF.ToString();
-            guna2TextBox10.Text =ldeduction.ToString();
-            guna2TextBox16.Text = totaldeduction.ToString();
+            guna2TextBox16.Text =ldeduction.ToString();
+            guna2TextBox10.Text = totaldeduction.ToString();
             guna2TextBox11.Text = netsalary.ToString();
 
             //guna2PictureBox1.Image= image;
@@ -338,6 +353,12 @@ namespace Luminary_Apparel
                         empInfo.Add(Chunk.NEWLINE);
                         empInfo.Add(new Chunk("Employee ID: "));
                         empInfo.Add(new Chunk(GID.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        empInfo.Add(Chunk.NEWLINE);
+                        empInfo.Add(new Chunk("Current Date: "));
+                        empInfo.Add(new Chunk(DateTime.Now.ToString("yyyy/dd/MM"), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        empInfo.Add(Chunk.NEWLINE);
+                        empInfo.Add(new Chunk("Current Time: "));
+                        empInfo.Add(new Chunk(DateTime.Now.ToString("HH:mm:ss"), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
                         empInfo.SpacingBefore = 10f;
                         empInfo.SpacingAfter = 10f;
                         
@@ -346,10 +367,7 @@ namespace Luminary_Apparel
                         doc.Add(empInfo);
 
 
-                        for (int i = 0; i < 1; i++)
-                        {
-                            doc.Add(Chunk.NEWLINE);
-                        }
+                        
 
                         // Add salary information
                         PdfPTable salaryTable = new PdfPTable(2);
@@ -358,11 +376,13 @@ namespace Luminary_Apparel
 
                         // Add header row
                         PdfPCell headerCell1 = new PdfPCell(new Paragraph("Description", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
-                        headerCell1.Padding = 5;
+                        headerCell1.Padding = 8;
+                        headerCell1.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER;
                         salaryTable.AddCell(headerCell1);
 
                         PdfPCell headerCell2 = new PdfPCell(new Paragraph("Amount", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
-                        headerCell2.Padding = 5;
+                        headerCell2.Padding = 8;
+                        headerCell2.HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER;
                         salaryTable.AddCell(headerCell2);
 
                         // Add data rows
@@ -372,30 +392,94 @@ namespace Luminary_Apparel
 
                         PdfPCell dataCell2 = new PdfPCell(new Paragraph(BasicSalary, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
                         dataCell2.Padding = 5;
+                        dataCell2.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
                         salaryTable.AddCell(dataCell2);
 
                         PdfPCell dataCell3 = new PdfPCell(new Paragraph("Bonus", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
                         dataCell3.Padding = 5;
                         salaryTable.AddCell(dataCell3);
 
-                        PdfPCell dataCell4 = new PdfPCell(new Paragraph("$5,000", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        PdfPCell dataCell4 = new PdfPCell(new Paragraph(bounus.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
                         dataCell4.Padding = 5;
+                        dataCell4.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
                         salaryTable.AddCell(dataCell4);
 
-                        PdfPCell dataCell5 = new PdfPCell(new Paragraph("Bonus", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
-                        dataCell3.Padding = 5;
-                        salaryTable.AddCell(dataCell3);
+                        PdfPCell dataCell5 = new PdfPCell(new Paragraph("Over-Time", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell5.Padding = 5;
+                        salaryTable.AddCell(dataCell5);
 
-                        PdfPCell dataCell6 = new PdfPCell(new Paragraph("$5,000", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
-                        dataCell4.Padding = 5;
-                        salaryTable.AddCell(dataCell4);
+                        PdfPCell dataCell6 = new PdfPCell(new Paragraph(otprice.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell6.Padding = 5;
+                        dataCell6.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        salaryTable.AddCell(dataCell6);
+
+                        PdfPCell dataCell7 = new PdfPCell(new Paragraph("E.P.F", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell7.Padding = 5;
+                        salaryTable.AddCell(dataCell7);
+
+                        PdfPCell dataCell8 = new PdfPCell(new Paragraph(netEPF.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell8.Padding = 5;
+                        dataCell8.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        salaryTable.AddCell(dataCell8);
+
+                        PdfPCell dataCell9 = new PdfPCell(new Paragraph("E.T.F", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell9.Padding = 5;
+                        salaryTable.AddCell(dataCell9);
+
+                        PdfPCell dataCell10 = new PdfPCell(new Paragraph(netETF.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell10.Padding = 5;
+                        dataCell10.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        salaryTable.AddCell(dataCell10);
+
+                        PdfPCell dataCell11 = new PdfPCell(new Paragraph("Loan Deduction", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell11.Padding = 5;
+                        salaryTable.AddCell(dataCell11);
+
+                        PdfPCell dataCell12 = new PdfPCell(new Paragraph(ldeduction.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell12.Padding = 5;
+                        dataCell12.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        salaryTable.AddCell(dataCell12);
+
+                        PdfPCell dataCell13 = new PdfPCell(new Paragraph("Net Salary", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell13.Padding = 10;
+                        salaryTable.AddCell(dataCell13);
+
+                        PdfPCell dataCell14 = new PdfPCell(new Paragraph(netsalary.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell14.Padding = 10;
+                        dataCell14.HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        salaryTable.AddCell(dataCell14);
 
                         doc.Add(salaryTable);
 
+
+                        for (int i = 0; i < 3; i++)
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                        }
+
+
                         // Add signature line
-                        Paragraph signature = new Paragraph("_______________________________");
+                        Paragraph signature = new Paragraph(".................................");
+                        signature.IndentationRight = 90;
                         signature.Alignment = iTextSharp.text.Element.ALIGN_RIGHT;
                         doc.Add(signature);
+
+                        Paragraph signaturename = new Paragraph("Signature        ");
+                        signaturename.IndentationRight = 90;
+                        signaturename.Alignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        doc.Add(signaturename);
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                        }
+
+                        Paragraph genmess = new Paragraph();
+                        //genmess.IndentationLeft = 90;
+                        genmess.Add(new Chunk("***This document has been automatically generated."));
+                        genmess.Add(new Chunk(name, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 7, iTextSharp.text.Font.NORMAL)));
+                        genmess.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                        doc.Add(genmess);
 
                         // Close document
                         doc.Close();
@@ -409,5 +493,9 @@ namespace Luminary_Apparel
             }
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -61,6 +61,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.guna2TextBox15 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -424,10 +425,22 @@
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            resources.ApplyResources(this.guna2Button2, "guna2Button2");
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
             // Payroll_details
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -481,5 +494,6 @@
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox16;
         private System.Windows.Forms.Label label16;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
