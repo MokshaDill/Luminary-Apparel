@@ -4,11 +4,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Xamarin.Forms;
+using Font = iTextSharp.text.Font;
+using Image = System.Drawing.Image;
+using Paragraph = iTextSharp.text.Paragraph;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace Luminary_Apparel
 {
@@ -22,6 +32,7 @@ namespace Luminary_Apparel
         private int count;
         private double overtimeHours;
         private string BasicSalary;
+        string name;
 
         public Payroll_details(int gID1)
         {
@@ -212,7 +223,7 @@ namespace Luminary_Apparel
 
 
 
-            string name = fname+" "+lname;
+            name = fname+" "+lname;
 
             double othour = Convert.ToDouble(otperhour);
             double otprice = overtimeHours* othour;
@@ -269,5 +280,134 @@ namespace Luminary_Apparel
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35))
+                {
+                    using (PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("test.pdf", FileMode.Create)))
+                    {
+                        doc.Open();
+
+                        iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(@"C:\Users\moksh\OneDrive\Desktop\LUMINARY.png");
+                        logo.ScaleAbsolute(100, 100);
+                        logo.SetAbsolutePosition(doc.PageSize.Width / 2 - 50, doc.PageSize.Height - 150);
+                        doc.Add(logo);
+
+
+
+                        Paragraph paragraph = new Paragraph( Chunk.NEWLINE );
+                        doc.Add(paragraph);
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                        }
+
+
+
+                        // Add header
+                        Paragraph header = new Paragraph("Payroll Receipt", new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 18, iTextSharp.text.Font.BOLD));
+                        header.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                        doc.Add(header);
+
+                        Paragraph comname = new Paragraph("Luminary Apparel (Pvt) Ltd", new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 15, iTextSharp.text.Font.NORMAL));
+                        comname.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                        doc.Add(comname);
+
+                        Paragraph address = new Paragraph("Avissawella Road, Homagama, Colombo", new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 15, iTextSharp.text.Font.NORMAL));
+                        address.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                        doc.Add(address);
+
+                        Paragraph country = new Paragraph("Sri Lanka", new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 15, iTextSharp.text.Font.NORMAL));
+                        country.Alignment = iTextSharp.text.Element.ALIGN_CENTER;
+                        doc.Add(country);
+
+                        for (int i = 0; i < 2; i++)
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                        }
+
+                        // Add employee information
+                        Paragraph empInfo = new Paragraph();
+                        empInfo.IndentationLeft = 90;
+                        empInfo.Add(new Chunk("Employee Name: "));
+                        empInfo.Add(new Chunk(name, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        empInfo.Add(Chunk.NEWLINE);
+                        empInfo.Add(new Chunk("Employee ID: "));
+                        empInfo.Add(new Chunk(GID.ToString(), new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        empInfo.SpacingBefore = 10f;
+                        empInfo.SpacingAfter = 10f;
+                        
+
+                        empInfo.Alignment = iTextSharp.text.Element.ALIGN_LEFT;
+                        doc.Add(empInfo);
+
+
+                        for (int i = 0; i < 1; i++)
+                        {
+                            doc.Add(Chunk.NEWLINE);
+                        }
+
+                        // Add salary information
+                        PdfPTable salaryTable = new PdfPTable(2);
+                        salaryTable.WidthPercentage = 70;
+                        salaryTable.DefaultCell.Border = iTextSharp.text.Rectangle.NO_BORDER;
+
+                        // Add header row
+                        PdfPCell headerCell1 = new PdfPCell(new Paragraph("Description", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
+                        headerCell1.Padding = 5;
+                        salaryTable.AddCell(headerCell1);
+
+                        PdfPCell headerCell2 = new PdfPCell(new Paragraph("Amount", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.BOLD)));
+                        headerCell2.Padding = 5;
+                        salaryTable.AddCell(headerCell2);
+
+                        // Add data rows
+                        PdfPCell dataCell1 = new PdfPCell(new Paragraph("Basic Salary", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell1.Padding = 5;
+                        salaryTable.AddCell(dataCell1);
+
+                        PdfPCell dataCell2 = new PdfPCell(new Paragraph(BasicSalary, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell2.Padding = 5;
+                        salaryTable.AddCell(dataCell2);
+
+                        PdfPCell dataCell3 = new PdfPCell(new Paragraph("Bonus", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell3.Padding = 5;
+                        salaryTable.AddCell(dataCell3);
+
+                        PdfPCell dataCell4 = new PdfPCell(new Paragraph("$5,000", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell4.Padding = 5;
+                        salaryTable.AddCell(dataCell4);
+
+                        PdfPCell dataCell5 = new PdfPCell(new Paragraph("Bonus", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell3.Padding = 5;
+                        salaryTable.AddCell(dataCell3);
+
+                        PdfPCell dataCell6 = new PdfPCell(new Paragraph("$5,000", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN, 12, iTextSharp.text.Font.NORMAL)));
+                        dataCell4.Padding = 5;
+                        salaryTable.AddCell(dataCell4);
+
+                        doc.Add(salaryTable);
+
+                        // Add signature line
+                        Paragraph signature = new Paragraph("_______________________________");
+                        signature.Alignment = iTextSharp.text.Element.ALIGN_RIGHT;
+                        doc.Add(signature);
+
+                        // Close document
+                        doc.Close();
+                    }
+                }
+                MessageBox.Show("PDF file has been generated successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred while generating PDF file: " + ex.Message);
+            }
+        }
+
     }
 }
