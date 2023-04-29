@@ -21,6 +21,7 @@ namespace Luminary_Apparel
         public int GID;
         private int count;
         private double overtimeHours;
+        private string BasicSalary;
 
         public Payroll_details(int gID1)
         {
@@ -46,6 +47,10 @@ namespace Luminary_Apparel
             string fname = "";
             string lname = "";
             string jname = "";
+            string jexp = "";
+            string loanstatus = "";
+            string maxloan = "";
+            double loanpermonth=0;
 
 
 
@@ -74,8 +79,9 @@ namespace Luminary_Apparel
             reader.Close();
             connection.Close();
 
+//-----------------------------------RETRIVING JOB DETAILS------------------------------------------------
 
-            string query1 = "SELECT JobName FROM JobDetailsForm WHERE GID = @GID2";
+            string query1 = "SELECT JobName, Experience FROM JobDetailsForm WHERE GID = @GID2";
             SqlCommand command1 = new SqlCommand(query1, connection);
             command1.Parameters.AddWithValue("@GID2", GID);
 
@@ -85,6 +91,7 @@ namespace Luminary_Apparel
             while (reader1.Read())
             {
                 jname = reader1["JobName"].ToString();
+                jexp = reader1["Experience"].ToString();
             }
 
             // Close connection and clean up resources
@@ -145,7 +152,56 @@ namespace Luminary_Apparel
             reader.Close();
             connection.Close();
 
- //-----------------------------------END OVER-TIME--------------------------------------          
+            //-----------------------------------END OVER-TIME--------------------------------------          
+
+
+            //----------------------------------COLLECT BASIC ALARY DETAILS---------------------------
+
+            string query5 = "SELECT BasicSalary, MaxLoanAmount FROM SalaryDB WHERE JobType = @jname AND Experience = @exp";
+            SqlCommand command5 = new SqlCommand(query5, connection);
+            command5.Parameters.AddWithValue("@jname", jname);
+            command5.Parameters.AddWithValue("@exp", jexp);
+
+            connection.Open();
+            SqlDataReader reader5 = command5.ExecuteReader();
+
+            while (reader5.Read())
+            {
+               BasicSalary = reader5["BasicSalary"].ToString();
+               maxloan = reader5["MaxLoanAmount"].ToString();
+            }
+
+            // Close connection and clean up resources
+            reader5.Close();
+            connection.Close();
+
+
+            //---------------------------------------------------------END---------------------------------------------
+
+            //--------------------------------------------LOAN DB---------------------------------------------------------
+
+            string query6 = "SELECT LoanStatus FROM Loan WHERE GID = @GID";
+            SqlCommand command6 = new SqlCommand(query6, connection);
+            command6.Parameters.AddWithValue("@GID", GID);
+
+            connection.Open();
+            SqlDataReader reader6 = command6.ExecuteReader();
+
+            while (reader6.Read())
+            {
+                loanstatus = reader6["LoanStatus"].ToString();
+            }
+
+            // Close connection and clean up resources
+            reader5.Close();
+            connection.Close();
+
+
+            if (loanstatus == "Online")
+            {
+                double maxloanx = Convert.ToDouble(maxloan);
+                loanpermonth = maxloanx / 24;
+            }
 
 
 
@@ -157,6 +213,8 @@ namespace Luminary_Apparel
             guna2TextBox4.Text = jname;
             guna2TextBox14.Text = count.ToString();
             guna2TextBox15.Text = overtimeHours.ToString();
+            guna2TextBox5.Text = BasicSalary.ToString();
+            guna2TextBox12.Text = loanpermonth.ToString();
             //guna2PictureBox1.Image= image;
         }
 
