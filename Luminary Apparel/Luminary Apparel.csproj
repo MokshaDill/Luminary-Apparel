@@ -141,6 +141,41 @@
     <Compile Include="Loan_Request.Designer.cs">
       <DependentUpon>Loan_Request.cs</DependentUpon>
     </Compile>
+    <Compile Include="Luminary_ApparelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Main_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +255,83 @@
     <EmbeddedResource Include="Request.resx">
       <DependentUpon>Request.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Luminary_ApparelDataSet.xsc">
+      <DependentUpon>Luminary_ApparelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet.xss">
+      <DependentUpon>Luminary_ApparelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet1.xsc">
+      <DependentUpon>Luminary_ApparelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet1.xss">
+      <DependentUpon>Luminary_ApparelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet2.xsc">
+      <DependentUpon>Luminary_ApparelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet2.xss">
+      <DependentUpon>Luminary_ApparelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet3.xsc">
+      <DependentUpon>Luminary_ApparelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet3.xss">
+      <DependentUpon>Luminary_ApparelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet4.xsc">
+      <DependentUpon>Luminary_ApparelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet4.xss">
+      <DependentUpon>Luminary_ApparelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet5.xsc">
+      <DependentUpon>Luminary_ApparelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet5.xss">
+      <DependentUpon>Luminary_ApparelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet6.xsc">
+      <DependentUpon>Luminary_ApparelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet6.xss">
+      <DependentUpon>Luminary_ApparelDataSet6.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -275,6 +387,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bookkeeping.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stacked-bar-chart.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MarylandToday06192019_ClothingRentAnimation_1920x1080.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

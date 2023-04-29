@@ -113,6 +113,16 @@ namespace Luminary_Apparel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap graph1 {
+            get {
+                object obj = ResourceManager.GetObject("graph1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_256x256 {
             get {
                 object obj = ResourceManager.GetObject("icon-256x256", resourceCulture);
@@ -136,6 +146,16 @@ namespace Luminary_Apparel.Properties {
         internal static System.Drawing.Bitmap LUMINARY {
             get {
                 object obj = ResourceManager.GetObject("LUMINARY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MarylandToday06192019_ClothingRentAnimation_1920x1080 {
+            get {
+                object obj = ResourceManager.GetObject("MarylandToday06192019_ClothingRentAnimation_1920x1080", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +196,16 @@ namespace Luminary_Apparel.Properties {
         internal static System.Drawing.Bitmap roce {
             get {
                 object obj = ResourceManager.GetObject("roce", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stacked_bar_chart {
+            get {
+                object obj = ResourceManager.GetObject("stacked-bar-chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

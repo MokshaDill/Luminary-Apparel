@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Luminary_ApparelDataSet3" targetNamespace="http://tempuri.org/Luminary_ApparelDataSet3.xsd" xmlns:mstns="http://tempuri.org/Luminary_ApparelDataSet3.xsd" xmlns="http://tempuri.org/Luminary_ApparelDataSet3.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Luminary_ApparelConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Luminary_ApparelConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Luminary_Apparel.Properties.Settings.GlobalReference.Default.Luminary_ApparelConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LoanRequestTableAdapter" GeneratorDataComponentClassName="LoanRequestTableAdapter" Name="LoanRequest" UserDataComponentName="LoanRequestTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Luminary_ApparelConnectionString (Settings)" DbObjectName="Luminary_Apparel.dbo.LoanRequest" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NIC FROM dbo.LoanRequest</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NIC" DataSetColumn="NIC" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Luminary_ApparelConnectionString (Settings)" DbObjectName="Luminary_Apparel.dbo.LoanRequest" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NIC FROM dbo.LoanRequest</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Luminary_ApparelConnectionString (Settings)" DbObjectName="Luminary_Apparel.dbo.LoanRequest" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NIC FROM dbo.LoanRequest</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Luminary_ApparelDataSet3" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Luminary_ApparelDataSet3" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Luminary_ApparelDataSet3">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LoanRequest" msprop:Generator_RowClassName="LoanRequestRow" msprop:Generator_RowEvHandlerName="LoanRequestRowChangeEventHandler" msprop:Generator_RowDeletedName="LoanRequestRowDeleted" msprop:Generator_RowDeletingName="LoanRequestRowDeleting" msprop:Generator_RowEvArgName="LoanRequestRowChangeEvent" msprop:Generator_TablePropName="LoanRequest" msprop:Generator_RowChangedName="LoanRequestRowChanged" msprop:Generator_UserTableName="LoanRequest" msprop:Generator_RowChangingName="LoanRequestRowChanging" msprop:Generator_TableClassName="LoanRequestDataTable" msprop:Generator_TableVarName="tableLoanRequest">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NIC" msprop:Generator_UserColumnName="NIC" msprop:Generator_ColumnPropNameInTable="NICColumn" msprop:Generator_ColumnPropNameInRow="NIC" msprop:Generator_ColumnVarNameInTable="columnNIC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
