@@ -51,6 +51,9 @@ namespace Luminary_Apparel
             string loanstatus = "";
             string maxloan = "";
             double loanpermonth=0;
+            string otperhour = "";
+            string EPF = "";
+            string ETF = "";
 
 
 
@@ -157,7 +160,7 @@ namespace Luminary_Apparel
 
             //----------------------------------COLLECT BASIC ALARY DETAILS---------------------------
 
-            string query5 = "SELECT BasicSalary, MaxLoanAmount FROM SalaryDB WHERE JobType = @jname AND Experience = @exp";
+            string query5 = "SELECT BasicSalary, MaxLoanAmount, OTPerHour, EPFRate ,ETFRate FROM SalaryDB WHERE JobType = @jname AND Experience = @exp";
             SqlCommand command5 = new SqlCommand(query5, connection);
             command5.Parameters.AddWithValue("@jname", jname);
             command5.Parameters.AddWithValue("@exp", jexp);
@@ -169,6 +172,9 @@ namespace Luminary_Apparel
             {
                BasicSalary = reader5["BasicSalary"].ToString();
                maxloan = reader5["MaxLoanAmount"].ToString();
+               otperhour = reader5["OTPerHour"].ToString();
+                EPF = reader5["EPFRate"].ToString();
+                ETF = reader5["ETFRate"].ToString();
             }
 
             // Close connection and clean up resources
@@ -200,13 +206,30 @@ namespace Luminary_Apparel
             if (loanstatus == "Online")
             {
                 double maxloanx = Convert.ToDouble(maxloan);
-                loanpermonth = maxloanx / 24;
+                loanpermonth = Math.Round(maxloanx,2) / 48; // 4 year package
             }
 
 
 
 
             string name = fname+" "+lname;
+
+            double othour = Convert.ToDouble(otperhour);
+            double otprice = overtimeHours* othour;
+
+            double netEPF = (Convert.ToDouble(BasicSalary) * Convert.ToDouble(EPF))/100;
+            double netETF = (Convert.ToDouble(BasicSalary) * Convert.ToDouble(ETF)) / 100;
+
+            //loan deduction
+            double ldeduction = (Convert.ToDouble(BasicSalary) - Convert.ToDouble(loanpermonth));
+
+            //total deduction
+            double totaldeduction = ( Convert.ToDouble(loanpermonth) + netEPF + netETF);
+
+            //net salary
+            double netsalary = (Convert.ToDouble(BasicSalary) - Convert.ToDouble(loanpermonth) - netEPF - netETF);
+
+
 
             guna2TextBox1.Text = GID.ToString();
             guna2TextBox2.Text = name;
@@ -215,6 +238,13 @@ namespace Luminary_Apparel
             guna2TextBox15.Text = overtimeHours.ToString();
             guna2TextBox5.Text = BasicSalary.ToString();
             guna2TextBox12.Text = loanpermonth.ToString();
+            guna2TextBox6.Text = otprice.ToString();
+            guna2TextBox8.Text = netEPF.ToString();
+            guna2TextBox9.Text = netETF.ToString();
+            guna2TextBox10.Text =ldeduction.ToString();
+            guna2TextBox16.Text = totaldeduction.ToString();
+            guna2TextBox11.Text = netsalary.ToString();
+
             //guna2PictureBox1.Image= image;
         }
 
