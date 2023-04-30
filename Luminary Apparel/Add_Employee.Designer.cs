@@ -30,6 +30,8 @@
         {
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -61,7 +63,6 @@
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label26 = new System.Windows.Forms.Label();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox10 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -134,6 +135,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.guna2Button10);
             this.tabPage1.Controls.Add(this.guna2Button9);
             this.tabPage1.Controls.Add(this.guna2Button8);
             this.tabPage1.Controls.Add(this.guna2Button3);
@@ -171,6 +174,35 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Details";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(775, 227);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(98, 16);
+            this.label27.TabIndex = 32;
+            this.label27.Text = "*remember that";
+            // 
+            // guna2Button10
+            // 
+            this.guna2Button10.Animated = true;
+            this.guna2Button10.AutoRoundedCorners = true;
+            this.guna2Button10.BorderRadius = 16;
+            this.guna2Button10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button10.FillColor = System.Drawing.Color.Purple;
+            this.guna2Button10.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold);
+            this.guna2Button10.ForeColor = System.Drawing.Color.White;
+            this.guna2Button10.Location = new System.Drawing.Point(1138, 174);
+            this.guna2Button10.Name = "guna2Button10";
+            this.guna2Button10.Size = new System.Drawing.Size(130, 34);
+            this.guna2Button10.TabIndex = 31;
+            this.guna2Button10.Text = "Genarate";
+            this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
             // 
             // guna2Button9
             // 
@@ -289,7 +321,7 @@
             this.guna2TextBox9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox9.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox9.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox9.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox9.Location = new System.Drawing.Point(778, 157);
             this.guna2TextBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -341,16 +373,18 @@
             this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox3.ItemHeight = 30;
             this.guna2ComboBox3.Items.AddRange(new object[] {
-            "Fashion Designer ",
-            "Pattern Maker ",
-            "Sample Maker ",
-            "Production Manager ",
-            "Quality Control Inspector ",
-            "Marketing Manager",
-            "Textile Engineer",
-            "Retail Sales Associate",
-            "Cleaner",
-            "Mechanic"});
+            "Production Manager",
+            "Quality Control Manager",
+            "Merchandiser",
+            "Pattern Maker",
+            "Sample Maker",
+            "Sewing Supervisor",
+            "Sewing Machine Operator",
+            "Cutter",
+            "Trimmer",
+            "Ironer/Presser",
+            "Packaging and Shipping Coordinator",
+            "Cleaner"});
             this.guna2ComboBox3.Location = new System.Drawing.Point(405, 326);
             this.guna2ComboBox3.Name = "guna2ComboBox3";
             this.guna2ComboBox3.Size = new System.Drawing.Size(229, 36);
@@ -636,7 +670,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label26);
             this.tabPage2.Controls.Add(this.guna2Button5);
             this.tabPage2.Controls.Add(this.guna2Button4);
             this.tabPage2.Controls.Add(this.guna2TextBox10);
@@ -660,16 +693,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Job Details";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Gainsboro;
-            this.label26.Location = new System.Drawing.Point(163, 333);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(168, 16);
-            this.label26.TabIndex = 16;
-            this.label26.Text = "Max - Level 5   Min - Level 1";
             // 
             // guna2Button5
             // 
@@ -752,14 +775,17 @@
             this.guna2ComboBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox7.ItemHeight = 30;
             this.guna2ComboBox7.Items.AddRange(new object[] {
-            "Machine Operator",
-            "Production Supervisor",
-            "Machine Technician",
-            "Supervisor",
-            "Assistant Production Officer",
-            "Production Officer",
-            "Quality Control Inspector",
-            "Industrial Engineer",
+            "Production Manager",
+            "Quality Control Manager",
+            "Merchandiser",
+            "Pattern Maker",
+            "Sample Maker",
+            "Sewing Supervisor",
+            "Sewing Machine Operator",
+            "Cutter",
+            "Trimmer",
+            "Ironer/Presser",
+            "Packaging and Shipping Coordinator",
             "Cleaner"});
             this.guna2ComboBox7.Location = new System.Drawing.Point(542, 125);
             this.guna2ComboBox7.Name = "guna2ComboBox7";
@@ -871,11 +897,9 @@
             this.guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox4.ItemHeight = 30;
             this.guna2ComboBox4.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
+            "Beginner",
+            "Intermediate",
+            "Expert"});
             this.guna2ComboBox4.Location = new System.Drawing.Point(166, 281);
             this.guna2ComboBox4.Name = "guna2ComboBox4";
             this.guna2ComboBox4.Size = new System.Drawing.Size(229, 36);
@@ -946,6 +970,7 @@
             this.guna2Button7.Size = new System.Drawing.Size(156, 40);
             this.guna2Button7.TabIndex = 12;
             this.guna2Button7.Text = "Clear";
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
             // 
             // guna2TextBox13
             // 
@@ -1269,6 +1294,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox11;
-        private System.Windows.Forms.Label label26;
+        private Guna.UI2.WinForms.Guna2Button guna2Button10;
+        private System.Windows.Forms.Label label27;
     }
 }

@@ -42,17 +42,35 @@ namespace Luminary_Apparel
             //check conformation box
             if (result == DialogResult.Yes)    
             {
-                con.Open();
+                // Check if all fields are filled
+                if (string.IsNullOrWhiteSpace(guna2TextBox1.Text) ||
+                    string.IsNullOrWhiteSpace(guna2ComboBox1.Text))
+                {
+                    MessageBox.Show("Please fill in all fields");
+                    return;
+                }
 
-                cmd = new SqlCommand("INSERT INTO AttendanceForm(GID, Status, STime, ETime) VALUES(@gid, @status, @stime, @etime)", con);
-                cmd.Parameters.AddWithValue("@gid", guna2TextBox1.Text);
-                cmd.Parameters.AddWithValue("@status", guna2ComboBox1.Text);
-                cmd.Parameters.AddWithValue("@stime", this.guna2DateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@etime", this.guna2DateTimePicker2.Value);
+                try
+                {
+                    con.Open();
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Saved");
-                con.Close();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO AttendanceForm(GID, Status, STime, ETime) VALUES(@gid, @status, @stime, @etime)", con);
+                    cmd.Parameters.AddWithValue("@gid", guna2TextBox1.Text);
+                    cmd.Parameters.AddWithValue("@status", guna2ComboBox1.Text);
+                    cmd.Parameters.AddWithValue("@stime", this.guna2DateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@etime", this.guna2DateTimePicker2.Value);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Saved");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
             else
             {
