@@ -42,28 +42,49 @@ namespace Luminary_Apparel
         {
 
 
-            con.Open();
+            if (string.IsNullOrEmpty(guna2TextBox15.Text) || string.IsNullOrEmpty(guna2ComboBox1.Text) || string.IsNullOrEmpty(guna2ComboBox2.Text) || string.IsNullOrEmpty(guna2TextBox3.Text) || string.IsNullOrEmpty(guna2TextBox4.Text) || string.IsNullOrEmpty(guna2TextBox5.Text) || string.IsNullOrEmpty(guna2TextBox6.Text) || string.IsNullOrEmpty(guna2TextBox7.Text))
+            {
+                MessageBox.Show("Please fill in all the required fields.");
+            }
+            else
+            {
+                con.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO SalaryDB(JobID,JobType,Experience,BasicSalary,OTPerHour,EPFRate,ETFRate,MaxLoanAmount) VALUES(@JID,@JType,@Exp,@BasicSal,@OTPerHr,@EPFRate,@ETFRate,@MaxLoanAmt)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO SalaryDB(JobID,JobType,Experience,BasicSalary,OTPerHour,EPFRate,ETFRate,MaxLoanAmount) VALUES(@JID,@JType,@Exp,@BasicSal,@OTPerHr,@EPFRate,@ETFRate,@MaxLoanAmt)", con);
 
-            cmd.Parameters.AddWithValue("@JID", guna2TextBox15.Text);
-            cmd.Parameters.AddWithValue("@JType", guna2ComboBox1.Text);
-            cmd.Parameters.AddWithValue("@Exp", guna2ComboBox2.Text);
-            cmd.Parameters.AddWithValue("@BasicSal", guna2TextBox3.Text);
-            cmd.Parameters.AddWithValue("@OTPerHr", guna2TextBox4.Text);
-            cmd.Parameters.AddWithValue("@EPFRate", guna2TextBox5.Text);
-            cmd.Parameters.AddWithValue("@ETFRate", guna2TextBox7.Text);
-            cmd.Parameters.AddWithValue("@MaxLoanAmt", guna2TextBox6.Text);
+                cmd.Parameters.AddWithValue("@JID", guna2TextBox15.Text);
+                cmd.Parameters.AddWithValue("@JType", guna2ComboBox1.Text);
+                cmd.Parameters.AddWithValue("@Exp", guna2ComboBox2.Text);
+                cmd.Parameters.AddWithValue("@BasicSal", guna2TextBox3.Text);
+                cmd.Parameters.AddWithValue("@OTPerHr", guna2TextBox4.Text);
+                cmd.Parameters.AddWithValue("@EPFRate", guna2TextBox5.Text);
+                cmd.Parameters.AddWithValue("@ETFRate", guna2TextBox7.Text);
+                cmd.Parameters.AddWithValue("@MaxLoanAmt", guna2TextBox6.Text);
 
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Saved");
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Saved");
+            }
+
 
 
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(guna2TextBox1.Text) || string.IsNullOrEmpty(guna2TextBox2.Text) || string.IsNullOrEmpty(guna2TextBox8.Text) || string.IsNullOrEmpty(guna2ComboBox4.Text) || string.IsNullOrEmpty(guna2TextBox9.Text) || string.IsNullOrEmpty(guna2TextBox10.Text))
+            {
+                MessageBox.Show("Please fill out all required fields.");
+                return;
+            }
+
+            // Validate email address
+            if (!IsValidEmail(guna2TextBox10.Text))
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                return;
+            }
+
             con.Open();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Login(ID, Username, Password, Position, GID, Email) VALUES(@ID, @uname, @pass, @position, @GID, @email)", con);
@@ -86,9 +107,37 @@ namespace Luminary_Apparel
 
         }
 
+        private bool IsValidEmail(string text)
+        {
+            throw new NotImplementedException();
+        }
+
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(guna2TextBox14.Text))
+            {
+                MessageBox.Show("Please enter a loan number.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(guna2TextBox12.Text))
+            {
+                MessageBox.Show("Please enter a GID.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(guna2ComboBox6.Text))
+            {
+                MessageBox.Show("Please select HR Approval status.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(guna2ComboBox7.Text))
+            {
+                MessageBox.Show("Please select loan status.");
+                return;
+            }
+
             con.Open();
 
             SqlCommand cmd = new SqlCommand("INSERT INTO Loan(LoanNo, GID, HRApproval, LoanStatus, Description) VALUES(@LoanNo, @GID, @HRApproval, @LoanStatus, @Description)", con);
@@ -127,6 +176,10 @@ namespace Luminary_Apparel
 
         private void Admin_page_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'luminary_ApparelDataSet8.BankDetailsForm' table. You can move, or remove it, as needed.
+            this.bankDetailsFormTableAdapter.Fill(this.luminary_ApparelDataSet8.BankDetailsForm);
+            // TODO: This line of code loads data into the 'luminary_ApparelDataSet7.JobDetailsForm' table. You can move, or remove it, as needed.
+            this.jobDetailsFormTableAdapter.Fill(this.luminary_ApparelDataSet7.JobDetailsForm);
             // TODO: This line of code loads data into the 'luminary_ApparelDataSet6.LeaveDB' table. You can move, or remove it, as needed.
             this.leaveDBTableAdapter.Fill(this.luminary_ApparelDataSet6.LeaveDB);
             // TODO: This line of code loads data into the 'luminary_ApparelDataSet5.SalaryDB' table. You can move, or remove it, as needed.
@@ -181,6 +234,40 @@ namespace Luminary_Apparel
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2TextBox15.Clear();
+            guna2ComboBox1.SelectedIndex = -1;
+            guna2ComboBox2.SelectedIndex = -1;
+            guna2TextBox3.Clear();
+            guna2TextBox4.Clear();
+            guna2TextBox5.Clear();
+            guna2TextBox7.Clear();
+            guna2TextBox6.Clear();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            guna2TextBox1.Clear();
+            guna2TextBox2.Clear();
+            guna2TextBox8.Clear();
+            guna2ComboBox4.SelectedIndex = -1;
+            guna2TextBox9.Clear();
+            guna2TextBox10.Clear();
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            // Clear all textboxes
+            guna2TextBox14.Clear();
+            guna2TextBox12.Clear();
+            guna2TextBox13.Clear();
+
+            // Reset all comboboxes to default value
+            guna2ComboBox6.SelectedIndex = 0;
+            guna2ComboBox7.SelectedIndex = 0;
         }
     }
 }

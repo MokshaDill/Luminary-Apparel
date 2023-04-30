@@ -55,19 +55,24 @@ namespace Luminary_Apparel
         private void guna2Button1_Click(object sender, EventArgs e)
         {
 
-            con.Open();
+            if (guna2TextBox1.Text == "" || guna2ComboBox1.Text == "" || guna2ComboBox2.Text == "" || guna2ComboBox3.Text == "")
+            {
+                MessageBox.Show("Please fill in all required fields.");
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO Leave(GID, Reason, LeaveType, Date, NOofDay) VALUES(@GID, @Reason, @LeaveType, @Date, @NOofDay)", con);
+                cmd.Parameters.AddWithValue("@GID", guna2TextBox1.Text);
+                cmd.Parameters.AddWithValue("@Reason", guna2ComboBox1.Text);
+                cmd.Parameters.AddWithValue("@LeaveType", guna2ComboBox2.Text);
+                cmd.Parameters.AddWithValue("@Date", guna2DateTimePicker1.Value);
+                cmd.Parameters.AddWithValue("@NOofDay", guna2ComboBox3.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Saved");
+            }
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO Leave(GID, Reason, LeaveType, Date, NOofDay) VALUES(@GID, @Reason, @LeaveType, @Date, @NOofDay)", con);
-
-            cmd.Parameters.AddWithValue("@GID", guna2TextBox1.Text);
-            cmd.Parameters.AddWithValue("@Reason", guna2ComboBox1.Text);
-            cmd.Parameters.AddWithValue("@LeaveType", guna2ComboBox2.Text);
-            cmd.Parameters.AddWithValue("@Date", guna2DateTimePicker1.Value);
-            cmd.Parameters.AddWithValue("@NOofDay", guna2ComboBox3.Text);
-
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Saved");
 
 
 
@@ -76,6 +81,15 @@ namespace Luminary_Apparel
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();   
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2TextBox1.Clear();
+            guna2ComboBox1.SelectedIndex = -1;
+            guna2ComboBox2.SelectedIndex = -1;
+            guna2DateTimePicker1.Value = DateTime.Now;
+            guna2ComboBox3.SelectedIndex = -1;
         }
     }
 }
