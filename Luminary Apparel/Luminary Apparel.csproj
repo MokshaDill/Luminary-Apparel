@@ -176,6 +176,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Luminary_ApparelDataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Luminary_ApparelDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Luminary_ApparelDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Luminary_ApparelDataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Main_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +341,28 @@
     </None>
     <None Include="Luminary_ApparelDataSet6.xss">
       <DependentUpon>Luminary_ApparelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet7.xsc">
+      <DependentUpon>Luminary_ApparelDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet7.xss">
+      <DependentUpon>Luminary_ApparelDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet8.xsc">
+      <DependentUpon>Luminary_ApparelDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Luminary_ApparelDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Luminary_ApparelDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Luminary_ApparelDataSet8.xss">
+      <DependentUpon>Luminary_ApparelDataSet8.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
