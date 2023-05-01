@@ -30,12 +30,14 @@ namespace Luminary_Apparel
         {
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM Login WHERE Username = @Username AND Password = @Password", con);
-                command.Parameters.AddWithValue("@Username", "admin");
-                command.Parameters.AddWithValue("@Password", guna2TextBox1.Text.Trim());
+                SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Admin WHERE AdminID = @name AND Password = @password", con);
+                command.Parameters.AddWithValue("@name", guna2TextBox2.Text.Trim());
+                command.Parameters.AddWithValue("@password", guna2TextBox1.Text.Trim());
 
                 con.Open();
-                int count = (int)command.ExecuteScalar();
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                con.Close();
+
                 if (count == 1)
                 {
                     // login successful, redirect to main page
@@ -47,6 +49,7 @@ namespace Luminary_Apparel
                     // display error message
                     MessageBox.Show("Invalid username or password.");
                 }
+
             }
             catch (Exception ex)
             {
