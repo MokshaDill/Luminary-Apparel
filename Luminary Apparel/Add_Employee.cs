@@ -17,7 +17,12 @@ namespace Luminary_Apparel
         SqlConnection con = new SqlConnection("Data Source=LAPTOP-4BLCHTST\\SQLEXPRESS;Initial Catalog=Luminary_Apparel;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
 
-        string image= null;
+
+        //for image 
+        private string image= null;
+
+
+
         // Declare a list to store previously generated numbers
         List<int> generatedNumbers = new List<int>();
         public Add_Employee()
