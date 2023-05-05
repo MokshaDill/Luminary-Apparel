@@ -76,6 +76,7 @@ namespace Luminary_Apparel
             {
                 try
                 {
+
                     con.Open();
                     SqlCommand cmd = new SqlCommand("INSERT INTO JobDetailsForm(JobName,Experience, DateConform, PayFrequency, PaymentMethod, Qualification, GID) VALUES(@Jname, @ex, @date, @pay, @payment, @quli,  @GID)", con);
 
@@ -99,9 +100,6 @@ namespace Luminary_Apparel
                     con.Close();
                 }
             }
-
-
-
 
         }
 

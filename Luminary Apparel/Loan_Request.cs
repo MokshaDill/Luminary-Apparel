@@ -65,30 +65,30 @@ namespace Luminary_Apparel
             {
                 MessageBox.Show("Please fill in all required fields.");
             }
-            else if (!Regex.IsMatch(guna2TextBox2.Text, @"^\d{9}(V|X)$"))
-            {
-                MessageBox.Show("Please enter a valid NIC number.");
-            }
-            else if (!Regex.IsMatch(guna2TextBox5.Text, @"^[1-9]\d*$"))
-            {
-                MessageBox.Show("Please enter a valid loan amount.");
-            }
-            else if (!Regex.IsMatch(guna2TextBox6.Text, @"^0\d{9}$|^7\d{8}$"))
-            {
-                MessageBox.Show("Please enter a valid contact number.");
-            }
-            else if (!Regex.IsMatch(guna2TextBox9.Text, @"^[1-9]\d*$"))
-            {
-                MessageBox.Show("Please enter a valid monthly fee.");
-            }
-            else if (!Regex.IsMatch(guna2TextBox10.Text, @"^\d{9}(V|X)$"))
-            {
-                MessageBox.Show("Please enter a valid guarantor GID number.");
-            }
-            else if (!Regex.IsMatch(guna2TextBox7.Text, @"^\d{9}(V|X)$"))
-            {
-                MessageBox.Show("Please enter a valid second guarantor GID number.");
-            }
+            //else if (!Regex.IsMatch(guna2TextBox2.Text, @"^\d{9}(V|X)$"))
+            //{
+            //    MessageBox.Show("Please enter a valid NIC number.");
+            //}
+            //else if (!Regex.IsMatch(guna2TextBox5.Text, @"^[1-9]\d*$"))
+            //{
+            //    MessageBox.Show("Please enter a valid loan amount.");
+            //}
+            //else if (!Regex.IsMatch(guna2TextBox6.Text, @"^0\d{9}$|^7\d{8}$"))
+            //{
+            //    MessageBox.Show("Please enter a valid contact number.");
+            //}
+            //else if (!Regex.IsMatch(guna2TextBox9.Text, @"^[1-9]\d*$"))
+            //{
+            //    MessageBox.Show("Please enter a valid monthly fee.");
+            //}
+            //else if (!Regex.IsMatch(guna2TextBox10.Text, @"^\d{9}(V|X)$"))
+            //{
+            //    MessageBox.Show("Please enter a valid guarantor GID number.");
+            //}
+            //else if (!Regex.IsMatch(guna2TextBox7.Text, @"^\d{9}(V|X)$"))
+            //{
+            //    MessageBox.Show("Please enter a valid second guarantor GID number.");
+            //}
             else
             {
                 con.Open();

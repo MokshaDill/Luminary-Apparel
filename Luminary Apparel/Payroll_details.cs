@@ -250,9 +250,9 @@ namespace Luminary_Apparel
 
 
             //bounus
-            if (count >= 20)
+            if (count >= 25)
             {
-                bounus = 500*(count-20);
+                bounus = 500*(count-25);
             }
 
 
