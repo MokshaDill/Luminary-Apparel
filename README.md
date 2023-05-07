@@ -47,11 +47,7 @@ It is evident from the data we gather that the main focus of our project is on m
 * .NET Framework
 * Microsoft SQL Server
 
-# Future Suggesions
 
-* Luminary Apparel could incorporate a performance management system to increase employee engagement, motivation, and productivity, leading to better business outcomes.
-* Integrate a talent management system to identify and develop top talent to meet long-term business goals.*
-* Luminary Apparel should consider incorporating an employee engagement survey into the HCM system to increase employee retention and job satisfaction.
 
 # Thank you 😃
 
